@@ -11,7 +11,7 @@ function App() {
       <Header />
       
       <main className="container" style={{ paddingBottom: '4rem' }}>
-        <div style={{ marginTop: '2rem', marginBottom: '4rem' }}>
+        <div className="hero-section flex flex-col md:grid md:grid-cols-12">
           <HeroBreakingNews />
         </div>
 

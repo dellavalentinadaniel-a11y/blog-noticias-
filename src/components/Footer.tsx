@@ -2,24 +2,22 @@
 
 const Footer = () => {
   return (
-    <footer style={{ backgroundColor: 'var(--color-primary)', color: 'var(--color-on-primary)', padding: '4rem 0 2rem' }}>
+    <footer className="footer-main">
       <div className="container grid md:grid-cols-12" style={{ gap: '3rem' }}>
         {/* Brand & Description */}
         <div className="md:col-span-4">
-          <div style={{ fontWeight: 700, fontSize: '1.5rem', letterSpacing: '-0.02em', marginBottom: '1rem' }}>
+          <div className="footer-logo">
             The Digital Curator.
           </div>
-          <p style={{ opacity: 0.8, fontSize: '0.875rem', maxWidth: '300px' }}>
+          <p className="body-sm" style={{ opacity: 0.8, maxWidth: '300px' }}>
             Periodismo de profundidad, diseñado para líderes. Una perspectiva diferente sobre las noticias que moldean el mundo.
           </p>
         </div>
 
         {/* Links Group 1 */}
         <div className="md:col-span-2">
-          <h4 style={{ fontWeight: 600, marginBottom: '1.5rem', letterSpacing: '0.05em', textTransform: 'uppercase', fontSize: '0.875rem' }}>
-            Secciones
-          </h4>
-          <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem', opacity: 0.8, fontSize: '0.875rem' }}>
+          <h4 className="footer-heading">Secciones</h4>
+          <ul className="footer-links">
             <li><a href="#">Política</a></li>
             <li><a href="#">Economía</a></li>
             <li><a href="#">Tecnología</a></li>
@@ -30,10 +28,8 @@ const Footer = () => {
 
         {/* Links Group 2 */}
         <div className="md:col-span-2">
-          <h4 style={{ fontWeight: 600, marginBottom: '1.5rem', letterSpacing: '0.05em', textTransform: 'uppercase', fontSize: '0.875rem' }}>
-            Corporativo
-          </h4>
-          <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem', opacity: 0.8, fontSize: '0.875rem' }}>
+          <h4 className="footer-heading">Corporativo</h4>
+          <ul className="footer-links">
             <li><a href="#">Sobre nosotros</a></li>
             <li><a href="#">Contacto</a></li>
             <li><a href="#">Anúnciate</a></li>
@@ -43,13 +39,11 @@ const Footer = () => {
 
         {/* Newsletter Minimalist Form */}
         <div className="md:col-span-4">
-          <h4 style={{ fontWeight: 600, marginBottom: '1.5rem', letterSpacing: '0.05em', textTransform: 'uppercase', fontSize: '0.875rem' }}>
-            Mantente Informado
-          </h4>
-          <form style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-            <div style={{ position: 'relative' }}>
+          <h4 className="footer-heading">Mantente Informado</h4>
+          <form className="flex flex-col" style={{ gap: '1rem' }}>
+            <div>
               <label 
-                htmlFor="email" 
+                htmlFor="footer-email" 
                 className="text-meta" 
                 style={{ color: 'var(--color-on-primary)', opacity: 0.8, marginBottom: '0.5rem', display: 'block' }}
               >
@@ -57,48 +51,21 @@ const Footer = () => {
               </label>
               <input 
                 type="email" 
-                id="email" 
+                id="footer-email" 
                 placeholder="tu@correo.com"
-                style={{
-                  width: '100%',
-                  backgroundColor: 'transparent',
-                  border: '1px solid rgba(255,255,255,0.2)',
-                  color: 'white',
-                  padding: '0.75rem',
-                  borderRadius: '0.25rem',
-                  fontSize: '1rem',
-                  outline: 'none'
-                }}
+                className="footer-input"
               />
             </div>
-            <button 
-              type="button" 
-              style={{
-                backgroundColor: 'transparent',
-                border: '1px solid var(--color-on-primary)',
-                color: 'var(--color-on-primary)',
-                padding: '0.75rem',
-                borderRadius: '0.25rem',
-                fontWeight: 600,
-                cursor: 'pointer',
-                transition: 'background-color 0.2s'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.1)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'transparent';
-              }}
-            >
+            <button type="button" className="footer-btn">
               Suscribirse
             </button>
           </form>
         </div>
       </div>
       
-      <div className="container" style={{ marginTop: '4rem', paddingTop: '2rem', borderTop: '1px solid rgba(255,255,255,0.1)', display: 'flex', justifyContent: 'space-between', opacity: 0.6, fontSize: '0.875rem' }}>
+      <div className="container footer-bottom">
         <span>© 2026 The Digital Curator. Todos los derechos reservados.</span>
-        <div style={{ display: 'flex', gap: '1.5rem' }}>
+        <div className="flex" style={{ gap: '1.5rem' }}>
           <a href="#">Privacidad</a>
           <a href="#">Términos</a>
         </div>

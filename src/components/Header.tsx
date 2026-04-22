@@ -3,35 +3,30 @@ import { Menu, Search, Bell } from 'lucide-react';
 
 const Header = () => {
   return (
-    <header className="glass-nav" style={{ padding: '1rem 0' }}>
-      <div className="container flex items-center justify-between">
+    <header className="glass-nav">
+      <div className="container header-container flex items-center justify-between">
         {/* Mobile Menu Icon */}
-        <button className="md:hidden" style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--color-on-surface)' }}>
+        <button 
+          className="md:hidden" 
+          aria-label="Abrir menú"
+          title="Menú"
+          style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--color-on-surface)' }}
+        >
           <Menu strokeWidth={1.5} size={24} />
         </button>
 
         {/* Logo */}
-        <div style={{ fontWeight: 700, fontSize: '1.5rem', letterSpacing: '-0.02em', color: 'var(--color-primary)' }}>
+        <div className="footer-logo" style={{ color: 'var(--color-primary)', marginBottom: 0 }}>
           The Digital Curator.
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex" style={{ gap: '2rem', display: 'none' }}>
-          <style>{`@media (min-width: 768px) { nav { display: flex !important; } }`}</style>
+        <nav className="hidden md:flex" style={{ gap: '2rem' }}>
           {['Inicio', 'Política', 'Economía', 'Tecnología', 'Opinión'].map((item) => (
             <a 
               key={item} 
               href="#" 
-              style={{ 
-                fontWeight: 600, 
-                color: 'var(--color-on-surface)',
-                opacity: 0.8,
-                transition: 'opacity 0.2s',
-                textDecoration: item === 'Inicio' ? 'underline solid var(--color-outline-variant) 2px' : 'none',
-                textUnderlineOffset: '6px'
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.opacity = '1')}
-              onMouseLeave={(e) => (e.currentTarget.style.opacity = '0.8')}
+              className={`nav-link ${item === 'Inicio' ? 'nav-link-active' : ''}`}
             >
               {item}
             </a>
@@ -40,10 +35,18 @@ const Header = () => {
 
         {/* Actions */}
         <div className="flex items-center" style={{ gap: '1rem' }}>
-          <button style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--color-on-surface)' }}>
+          <button 
+            aria-label="Buscar"
+            title="Buscar"
+            style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--color-on-surface)' }}
+          >
             <Search strokeWidth={1.5} size={20} />
           </button>
-          <button style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--color-on-surface)' }}>
+          <button 
+            aria-label="Notificaciones"
+            title="Notificaciones"
+            style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--color-on-surface)' }}
+          >
             <Bell strokeWidth={1.5} size={20} />
           </button>
         </div>

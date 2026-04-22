@@ -10,15 +10,15 @@ function App() {
     <div className="app-wrapper">
       <Header />
       
-      <main className="container" style={{ paddingBottom: '4rem' }}>
-        <div className="hero-section flex flex-col md:grid md:grid-cols-12">
+      <main className="container pb-3xl">
+        <div className="grid md:grid-cols-12 mb-2xl">
           <HeroBreakingNews />
         </div>
 
         <div className="grid md:grid-cols-12">
           {/* Main Article Grid */}
           <div className="md:col-span-8">
-            <h2 className="headline-lg" style={{ marginBottom: '2rem' }}>Noticias Recientes</h2>
+            <h2 className="headline-lg mb-2xl">Noticias Recientes</h2>
             <ArticleGrid />
           </div>
 

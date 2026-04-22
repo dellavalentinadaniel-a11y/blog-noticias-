@@ -7,21 +7,20 @@ const Header = () => {
       <div className="container header-container flex items-center justify-between">
         {/* Mobile Menu Icon */}
         <button 
-          className="md:hidden" 
+          className="md:hidden icon-btn" 
           aria-label="Abrir menú"
           title="Menú"
-          style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--color-on-surface)' }}
         >
           <Menu strokeWidth={1.5} size={24} />
         </button>
 
         {/* Logo */}
-        <div className="footer-logo" style={{ color: 'var(--color-primary)', marginBottom: 0 }}>
+        <div className="footer-logo text-primary mb-0">
           The Digital Curator.
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex" style={{ gap: '2rem' }}>
+        <nav className="hidden md:flex gap-2xl">
           {['Inicio', 'Política', 'Economía', 'Tecnología', 'Opinión'].map((item) => (
             <a 
               key={item} 
@@ -34,18 +33,18 @@ const Header = () => {
         </nav>
 
         {/* Actions */}
-        <div className="flex items-center" style={{ gap: '1rem' }}>
+        <div className="flex items-center gap-lg">
           <button 
             aria-label="Buscar"
             title="Buscar"
-            style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--color-on-surface)' }}
+            className="icon-btn"
           >
             <Search strokeWidth={1.5} size={20} />
           </button>
           <button 
             aria-label="Notificaciones"
             title="Notificaciones"
-            style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--color-on-surface)' }}
+            className="icon-btn"
           >
             <Bell strokeWidth={1.5} size={20} />
           </button>

@@ -41,9 +41,9 @@ const ARTICLES = [
 
 const ArticleGrid = () => {
   return (
-    <div className="flex flex-col" style={{ gap: '3rem' }}>
+    <div className="flex flex-col gap-3xl">
       {ARTICLES.map((article) => (
-        <article key={article.id} className="article-item flex flex-col md:grid md:grid-cols-12" style={{ gap: '1.5rem' }}>
+        <article key={article.id} className="article-item flex flex-col md:grid md:grid-cols-12 gap-xl">
           <div className="md:col-span-4">
             <div className="article-image-container">
               <img 
@@ -54,14 +54,14 @@ const ArticleGrid = () => {
             </div>
           </div>
           <div className="md:col-span-8 flex flex-col justify-center">
-            <span className="text-meta" style={{ color: 'var(--color-primary)', fontWeight: 600, marginBottom: '0.5rem' }}>
+            <span className="text-meta text-primary font-semibold mb-sm">
               {article.category}
             </span>
-            <h3 className="headline-md" style={{ marginBottom: '0.75rem' }}>{article.title}</h3>
-            <p className="body-md" style={{ opacity: 0.8, marginBottom: '1rem' }}>{article.excerpt}</p>
-            <div className="flex items-center" style={{ gap: '0.75rem' }}>
+            <h3 className="headline-md mb-md">{article.title}</h3>
+            <p className="body-md opacity-80 mb-lg">{article.excerpt}</p>
+            <div className="flex items-center gap-md">
               <span className="text-meta">{article.author}</span>
-              <span style={{ width: '4px', height: '4px', borderRadius: '50%', backgroundColor: 'var(--color-outline-variant)' }} />
+              <span className="circle-dot" />
               <span className="text-meta">{article.date}</span>
             </div>
           </div>

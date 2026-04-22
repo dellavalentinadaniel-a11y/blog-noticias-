@@ -3,13 +3,13 @@
 const Footer = () => {
   return (
     <footer className="footer-main">
-      <div className="container grid md:grid-cols-12" style={{ gap: '3rem' }}>
+      <div className="container grid md:grid-cols-12 gap-3xl">
         {/* Brand & Description */}
         <div className="md:col-span-4">
           <div className="footer-logo">
             The Digital Curator.
           </div>
-          <p className="body-sm" style={{ opacity: 0.8, maxWidth: '300px' }}>
+          <p className="body-sm opacity-80 max-w-300">
             Periodismo de profundidad, diseñado para líderes. Una perspectiva diferente sobre las noticias que moldean el mundo.
           </p>
         </div>
@@ -40,12 +40,11 @@ const Footer = () => {
         {/* Newsletter Minimalist Form */}
         <div className="md:col-span-4">
           <h4 className="footer-heading">Mantente Informado</h4>
-          <form className="flex flex-col" style={{ gap: '1rem' }}>
+          <form className="flex flex-col gap-lg">
             <div>
               <label 
                 htmlFor="footer-email" 
-                className="text-meta" 
-                style={{ color: 'var(--color-on-primary)', opacity: 0.8, marginBottom: '0.5rem', display: 'block' }}
+                className="text-meta footer-label"
               >
                 CORREO ELECTRÓNICO
               </label>
@@ -65,7 +64,7 @@ const Footer = () => {
       
       <div className="container footer-bottom">
         <span>© 2026 The Digital Curator. Todos los derechos reservados.</span>
-        <div className="flex" style={{ gap: '1.5rem' }}>
+        <div className="flex gap-xl">
           <a href="#">Privacidad</a>
           <a href="#">Términos</a>
         </div>

@@ -1,9 +1,9 @@
 
-import Header from './components/Header';
-import HeroBreakingNews from './components/HeroBreakingNews';
-import ArticleGrid from './components/ArticleGrid';
-import SidebarTrending from './components/SidebarTrending';
-import Footer from './components/Footer';
+import Header from './components/Header.tsx';
+import HeroBreakingNews from './components/HeroBreakingNews.tsx';
+import ArticleGrid from './components/ArticleGrid.tsx';
+import SidebarTrending from './components/SidebarTrending.tsx';
+import Footer from './components/Footer.tsx';
 
 function App() {
   return (

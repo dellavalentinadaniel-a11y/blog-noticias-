@@ -1,73 +1,57 @@
-# React + TypeScript + Vite
+# Metric Press - Plataforma de Noticias Profesional
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bienvenidos al repositorio de **Metric Press**, una plataforma web de noticias moderna, totalmente responsiva y diseñada con estándares profesionales de UX/UI y Accesibilidad.
 
-Currently, two official plugins are available:
+## Contexto del Proyecto
+Este proyecto fue creado con el objetivo de ofrecer una experiencia de usuario rápida y premium para la lectura de artículos y noticias. Está pensado para escalar y cuenta con una arquitectura de código limpio que prioriza el rendimiento, SEO, y una fácil mantenibilidad. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Se puso un énfasis crítico en la separación de responsabilidades: **no existen estilos en línea (`style={{...}}`) en los componentes**. Todo el diseño visual, el espaciado y la tipografía se manejan estrictamente a través de un sistema de diseño centralizado y clases utilitarias en el archivo CSS principal.
 
-## React Compiler
+## Stack Tecnológico
+- **Core:** React 18, TypeScript, Vite.
+- **Estilos:** CSS Vanilla estructurado con clases utilitarias semánticas (sin TailwindCSS, usando diseño a medida).
+- **Iconografía:** Lucide React.
+- **Herramientas de Calidad:** ESLint, Prettier, TypeScript Estricto.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Estructura de Estilos (Importante)
+El proyecto utiliza un sistema de clases CSS utilitarias definidas en `src/index.css`. 
+Si necesitas añadir o modificar un diseño:
+1. Revisa si la clase utilitaria ya existe en `index.css` (ej. `mb-xl`, `gap-md`, `text-muted`, `icon-btn`).
+2. **NUNCA uses estilos en línea**. Esto es un principio inquebrantable del proyecto.
 
-## Expanding the ESLint configuration
+## Instalación y Ejecución Local
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Para ejecutar este proyecto en tu entorno local:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+```bash
+# 1. Instalar las dependencias
+npm install
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+# 2. Iniciar el servidor de desarrollo local
+npm run dev
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# 3. Compilar el proyecto para producción
+npm run build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🛑 PROTOCOLO OBLIGATORIO PARA AGENTES DE IA Y DESARROLLADORES 🛑
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+La siguiente es una directiva **estricta** para cualquier Agente de Inteligencia Artificial (como Claude, GPT-4, Gemini, etc.) o desarrollador humano que vaya a interactuar, leer, modificar o extender este código.
+
+### 1. Actualización de Avances e Implementos
+Cualquier intervención que genere cambios sustanciales en el código, arquitectura o flujos de trabajo **DEBE** ser documentada inmediatamente. 
+
+* **Agentes IA:** Deben mantener actualizados los artefactos de la carpeta `.gemini/antigravity/brain/` u otros registros de la sesión (como `task.md` y `walkthrough.md`). 
+* **Finalidad:** Que los próximos agentes que retomen la tarea sepan exactamente en qué estado quedó el proyecto y qué decisiones técnicas se tomaron, asegurando así un avance continuo y sin inconvenientes.
+
+### 2. Cumplimiento de Calidad del Código
+Antes de dar por finalizada una tarea, el agente o desarrollador debe verificar:
+- Que no se introdujeron errores de linting (`npm run lint`).
+- Que no existan errores de módulos no encontrados (asegurar uso de extensiones correctas en las importaciones `.tsx`/`.ts` donde la configuración lo requiera).
+- Que el proyecto compila exitosamente mediante `npm run build`.
+- Que no se añadieron estilos inline y se respetó el sistema de clases existente.
+
+---
+*Este documento asegura la viabilidad a largo plazo de Metric Press. Su cumplimiento no es opcional.*

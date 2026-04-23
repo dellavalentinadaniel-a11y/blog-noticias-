@@ -1,5 +1,7 @@
 
 
+import { Link } from 'react-router-dom';
+
 const HeroBreakingNews = () => {
   return (
     <>
@@ -13,13 +15,13 @@ const HeroBreakingNews = () => {
           Las nuevas normativas exigen a las instituciones financieras adaptar sus sistemas en tiempo récord. Expertos advierten sobre los desafíos éticos.
         </p>
         <div className="flex items-center gap-lg">
-          <button className="btn-primary">Leer Historia</button>
+          <Link to="/article/hero" className="btn-primary" style={{ textDecoration: 'none' }}>Leer Historia</Link>
           <span className="text-meta">Hace 2 horas • Por Equipo de Redacción</span>
         </div>
       </div>
 
       {/* Image Side (60%) Asymmetrical */}
-      <div className="md:col-span-7 hover-lift relative">
+      <Link to="/article/hero" className="md:col-span-7 hover-lift relative" style={{ display: 'block' }}>
         <div className="hero-image-container">
           <img 
             src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1000&auto=format&fit=crop" 
@@ -29,7 +31,7 @@ const HeroBreakingNews = () => {
           {/* Subtle gradient overlay */}
           <div className="hero-overlay" />
         </div>
-      </div>
+      </Link>
     </>
   );
 };

@@ -1,17 +1,13 @@
 
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
-interface CookieBannerProps {
-  onNavigate: (page: string) => void;
-}
-
-const CookieBanner = ({ onNavigate }: CookieBannerProps) => {
+const CookieBanner = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const hasAccepted = localStorage.getItem('cookies-accepted');
     if (!hasAccepted) {
-      // Delay visibility for a smoother entrance
       const timer = setTimeout(() => setIsVisible(true), 1000);
       return () => clearTimeout(timer);
     }
@@ -29,9 +25,9 @@ const CookieBanner = ({ onNavigate }: CookieBannerProps) => {
       <p>
         Utilizamos cookies propias y de terceros para mejorar su experiencia y nuestros servicios, 
         analizando la navegación en nuestro sitio web. Puede consultar nuestra{' '}
-        <span className="cookie-link" onClick={() => onNavigate('cookies')}>
+        <Link to="/cookies" className="cookie-link" onClick={() => setIsVisible(false)}>
           Política de Cookies
-        </span>.
+        </Link>.
       </p>
       <div className="cookie-banner-actions">
         <button className="btn-primary" onClick={handleAccept}>

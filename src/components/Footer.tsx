@@ -1,18 +1,15 @@
 
+import { Link } from 'react-router-dom';
 
-interface FooterProps {
-  onNavigate: (page: string) => void;
-}
-
-const Footer = ({ onNavigate }: FooterProps) => {
+const Footer = () => {
   return (
     <footer className="footer-main">
       <div className="container grid md:grid-cols-12 gap-3xl">
         {/* Brand & Description */}
         <div className="md:col-span-4">
-          <div className="footer-logo cursor-pointer" onClick={() => onNavigate('home')}>
+          <Link to="/" className="footer-logo" style={{ textDecoration: 'none', color: 'inherit' }}>
             The Digital Curator.
-          </div>
+          </Link>
           <p className="body-sm opacity-80 max-w-300">
             Periodismo de profundidad, diseñado para líderes. Una perspectiva diferente sobre las noticias que moldean el mundo.
           </p>
@@ -22,11 +19,11 @@ const Footer = ({ onNavigate }: FooterProps) => {
         <div className="md:col-span-2">
           <h4 className="footer-heading">Secciones</h4>
           <ul className="footer-links">
-            <li><a href="#" onClick={(e) => { e.preventDefault(); onNavigate('home'); }}>Política</a></li>
-            <li><a href="#" onClick={(e) => { e.preventDefault(); onNavigate('home'); }}>Economía</a></li>
-            <li><a href="#" onClick={(e) => { e.preventDefault(); onNavigate('home'); }}>Tecnología</a></li>
-            <li><a href="#" onClick={(e) => { e.preventDefault(); onNavigate('home'); }}>Sociedad</a></li>
-            <li><a href="#" onClick={(e) => { e.preventDefault(); onNavigate('home'); }}>Opinión</a></li>
+            <li><Link to="/category/politics">Política</Link></li>
+            <li><Link to="/category/business">Economía</Link></li>
+            <li><Link to="/category/tecnologia">Tecnología</Link></li>
+            <li><Link to="/category/sociedad">Sociedad</Link></li>
+            <li><Link to="/category/opinion">Opinión</Link></li>
           </ul>
         </div>
 
@@ -34,10 +31,10 @@ const Footer = ({ onNavigate }: FooterProps) => {
         <div className="md:col-span-2">
           <h4 className="footer-heading">Corporativo</h4>
           <ul className="footer-links">
-            <li><a href="#" onClick={(e) => { e.preventDefault(); onNavigate('home'); }}>Sobre nosotros</a></li>
-            <li><a href="#" onClick={(e) => { e.preventDefault(); onNavigate('home'); }}>Contacto</a></li>
-            <li><a href="#" onClick={(e) => { e.preventDefault(); onNavigate('home'); }}>Anúnciate</a></li>
-            <li><a href="#" onClick={(e) => { e.preventDefault(); onNavigate('home'); }}>Trabaja aquí</a></li>
+            <li><Link to="/about">Sobre nosotros</Link></li>
+            <li><Link to="/contact">Contacto</Link></li>
+            <li><Link to="/advertise">Anúnciate</Link></li>
+            <li><Link to="/careers">Trabaja aquí</Link></li>
           </ul>
         </div>
 
@@ -69,9 +66,9 @@ const Footer = ({ onNavigate }: FooterProps) => {
       <div className="container footer-bottom">
         <span>© 2026 The Digital Curator. Todos los derechos reservados.</span>
         <div className="flex gap-xl">
-          <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('home'); }}>Privacidad</a>
-          <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('home'); }}>Términos</a>
-          <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('cookies'); }}>Cookies</a>
+          <Link to="/privacy">Privacidad</Link>
+          <Link to="/terms">Términos</Link>
+          <Link to="/cookies">Cookies</Link>
         </div>
       </div>
     </footer>

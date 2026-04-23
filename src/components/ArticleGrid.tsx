@@ -1,4 +1,4 @@
-
+import { Link } from 'react-router-dom';
 
 const ARTICLES = [
   {
@@ -43,8 +43,13 @@ const ArticleGrid = () => {
   return (
     <div className="flex flex-col gap-3xl">
       {ARTICLES.map((article) => (
-        <article key={article.id} className="article-item flex flex-col md:grid md:grid-cols-12 gap-xl">
-          <div className="md:col-span-4">
+        <Link 
+          key={article.id} 
+          to={`/article/${article.id}`}
+          className="article-item article-card-hover flex flex-col md:grid md:grid-cols-12 gap-xl"
+          style={{ textDecoration: 'none', color: 'inherit' }}
+        >
+          <div className="md:col-span-5">
             <div className="article-image-container">
               <img 
                 src={article.image} 
@@ -53,8 +58,8 @@ const ArticleGrid = () => {
               />
             </div>
           </div>
-          <div className="md:col-span-8 flex flex-col justify-center">
-            <span className="text-meta text-primary font-semibold mb-sm">
+          <div className="md:col-span-7 flex flex-col justify-center">
+            <span className="text-meta text-tertiary mb-sm">
               {article.category}
             </span>
             <h3 className="headline-md mb-md">{article.title}</h3>
@@ -65,7 +70,7 @@ const ArticleGrid = () => {
               <span className="text-meta">{article.date}</span>
             </div>
           </div>
-        </article>
+        </Link>
       ))}
     </div>
   );

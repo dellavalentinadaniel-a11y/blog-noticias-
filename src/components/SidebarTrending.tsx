@@ -12,7 +12,7 @@ const SidebarTrending = () => {
   return (
     <div className="sidebar-container">
       <div className="flex items-center gap-md mb-xl">
-        <TrendingUp size={20} className="text-primary" />
+        <TrendingUp size={20} className="text-tertiary" />
         <h3 className="headline-sm mb-0">Temas en Tendencia</h3>
       </div>
 
@@ -23,25 +23,31 @@ const SidebarTrending = () => {
               {String(index + 1).padStart(2, '0')}
             </span>
             <div className="flex flex-col">
-              <span className="text-meta text-primary font-semibold mb-xs">
+              <span className="text-meta text-primary mb-xs">
                 {topic.category}
               </span>
               <h4 className="headline-sm text-base mb-0">
                 {topic.title}
               </h4>
-              <span className="text-meta mt-sm">{topic.views} visualizaciones</span>
+              <span className="text-meta mt-sm" style={{textTransform: 'none'}}>{topic.views} visualizaciones</span>
             </div>
           </div>
         ))}
       </div>
 
-      {/* Newsletter Placeholder */}
+      {/* Newsletter Widget */}
       <div className="newsletter-card">
         <h4 className="headline-sm mb-sm">La Dosis Diaria</h4>
         <p className="body-sm opacity-80 mb-xl">
           Recibe las noticias más importantes directamente en tu correo.
         </p>
-        <button className="btn-primary w-full">Suscribirse</button>
+        <input 
+          type="email" 
+          placeholder="tu@correo.com" 
+          className="newsletter-input" 
+          aria-label="Correo electrónico"
+        />
+        <button className="btn-secondary w-full">Suscribirse</button>
       </div>
     </div>
   );

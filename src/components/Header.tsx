@@ -1,7 +1,12 @@
 
 import { Menu, Search, Bell } from 'lucide-react';
 
-const Header = () => {
+interface HeaderProps {
+  onNavigate: (page: string) => void;
+  currentPage: string;
+}
+
+const Header = ({ onNavigate, currentPage }: HeaderProps) => {
   return (
     <header className="glass-nav">
       <div className="container header-container flex items-center justify-between">
@@ -15,7 +20,10 @@ const Header = () => {
         </button>
 
         {/* Logo */}
-        <div className="footer-logo text-primary mb-0">
+        <div 
+          className="footer-logo text-primary mb-0 cursor-pointer" 
+          onClick={() => onNavigate('home')}
+        >
           The Digital Curator.
         </div>
 
@@ -25,7 +33,8 @@ const Header = () => {
             <a 
               key={item} 
               href="#" 
-              className={`nav-link ${item === 'Inicio' ? 'nav-link-active' : ''}`}
+              onClick={(e) => { e.preventDefault(); onNavigate('home'); }}
+              className={`nav-link ${item === 'Inicio' && currentPage === 'home' ? 'nav-link-active' : ''}`}
             >
               {item}
             </a>
